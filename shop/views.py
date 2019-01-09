@@ -3,13 +3,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User, Group
 from shop.models import Game, Developer, Player
-
-
 # Create your views here.
 def index(request):
     if request.method == "GET":
         return HttpResponse("Hello World!")
-
 
 def signup(request):
     if request.user.is_authenticated:
@@ -27,20 +24,17 @@ def login_view(request):
         return redirect("shop:index")
     return render(request, 'shop/login.html')
 
-
 def login_user(request):
     pass
-
 
 def home(request):
     if request.method == "GET":
         if request.user.is_authenticated:
             return redirect("shop:index")
         games = Game.objects.all()
-        return render(request, "shop/home.html", {"games": games})
+        return render(request, "shop/home.html", {"games":games})
     else:
         return HttpResponse(status=500)
-
 
 def create(request):
     if request.method == "POST":
@@ -75,5 +69,9 @@ def create(request):
             login(request, user, backend="django.contrib.auth.backends.ModelBackend")
         return redirect("shop:index")
 
+
     else:
         return redirect("shop:signup")
+
+def catalog_view(request):
+    pass
