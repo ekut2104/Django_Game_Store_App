@@ -21,6 +21,13 @@
     <div class="navbar-end">
 
         <div class="navbar-item">
+          {% if request.path == "/login" %}
+            <a href="{% url 'shop:signup' %}" class="button">Signup</a>
+            {% elif request.path == "/signup"  %}
+            <a href="{% url 'shop:login' %}" class="button">Login</a>
+            {% elif request.path == "/home"  %}
+            <a href="{% url 'shop:login' %}" class="button">Login</a>
+        {% endif %}
         </div>
     </div>
 </nav>
