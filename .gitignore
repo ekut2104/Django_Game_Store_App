@@ -4,3 +4,4 @@ gameshop/__pycache__/
 db.sqlite3
 shop/.DS_Store
 shop/templates/.DS_Store
+shop/static/shop/.DS_Store
