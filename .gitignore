@@ -2,3 +2,5 @@ shop/__pycache__/
 shop/migrations/__pycache__/
 gameshop/__pycache__/
 db.sqlite3
+shop/.DS_Store
+shop/templates/.DS_Store
