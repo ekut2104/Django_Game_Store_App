@@ -26,6 +26,7 @@ urlpatterns = [
     path('developer/games/<int:game_id>/edit', views.edit_game, name='editgame'),
     path('developer/games/<int:game_id>/update', views.edit_game_update, name='updategame'),
     path('developer/games/<int:game_id>/delete', views.edit_game_delete, name='deletegame'),
+    path('facebook', views.facebook_handler, name='facebook_handler'),
 
 
 ]

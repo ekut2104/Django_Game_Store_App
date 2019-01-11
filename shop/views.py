@@ -385,3 +385,15 @@ def edit_game_delete(request, game_id):
             return redirect("shop:developer_games")
     else:
         return HttpResponse(status=500)
+
+
+def facebook_handler(request):
+    if request.method == "GET":
+        user = request.user
+        if Player.objects.filter(user=user).exists():
+            return redirect("shop:index")
+        Player.objects.create(user=user).save()
+        player = Player.objects.filter(user=user)
+        user = player
+        return redirect("shop:index")
+    return HttpResponse(status=500)
